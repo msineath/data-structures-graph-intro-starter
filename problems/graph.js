@@ -72,6 +72,37 @@ class Graph {
 
   depthFirstTraversalRecursive(startingVertex, visited = new Set(), vertices = []) {
     // Code goes here ...
+    
+    if(!visited.has(startingVertex)) {
+      visited.add(startingVertex);
+      vertices.push(startingVertex);
+      this.adjList[startingVertex].forEach(vertex => this.depthFirstTraversalRecursive(vertex, visited, vertices));
+    }
+
+    return vertices;
+    
+    // let neighbors = this.adjList[startingVertex];
+    // if(Object.keys(this.adjList).length === vertices.length)
+    // return vertices;
+    
+    // visited.add(startingVertex);
+    // vertices.push(startingVertex);
+    
+    // if(neighbors === undefined) {
+    //   this.depthFirstTraversalRecursive();
+    // }
+
+    // let num = 0;
+    // let newVertex = neighbors[num];
+
+    // while(visited.has(newVertex)) {
+    //   num++;
+    //   newVertex = neighbors[num];
+    
+    // }
+
+    // return this.depthFirstTraversalRecursive(newVertex, visited, vertices) //expected :['a', 'b', 'c', 'f', 'g', 'd', 'e']
+    
   }
 
 }
