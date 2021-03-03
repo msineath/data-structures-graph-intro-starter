@@ -78,52 +78,9 @@ class Graph {
       vertices.push(startingVertex);
       this.adjList[startingVertex].forEach(vertex => this.depthFirstTraversalRecursive(vertex, visited, vertices));
     }
-
     return vertices;
-    
-    // let neighbors = this.adjList[startingVertex];
-    // if(Object.keys(this.adjList).length === vertices.length)
-    // return vertices;
-    
-    // visited.add(startingVertex);
-    // vertices.push(startingVertex);
-    
-    // if(neighbors === undefined) {
-    //   this.depthFirstTraversalRecursive();
-    // }
-
-    // let num = 0;
-    // let newVertex = neighbors[num];
-
-    // while(visited.has(newVertex)) {
-    //   num++;
-    //   newVertex = neighbors[num];
-    
-    // }
-
-    // return this.depthFirstTraversalRecursive(newVertex, visited, vertices) //expected :['a', 'b', 'c', 'f', 'g', 'd', 'e']
-    
   }
-
 }
-
-// const graph1 = {
-//   a: ['b', 'c', 'd'],
-//   b: ['a', 'c', 'e'],
-//   c: ['a', 'b', 'f', 'g'],
-//   d: ['a', 'g'],
-//   g: ['d', 'c', 'f'],
-//   e: ['b'],
-//   f: ['c', 'g']
-// }
-
-['a', 'd', 'g', 'f', 'c', 'b', 'e']
-
-
-// RR[a, b, c, d, e, f, g]
-
-// V[a, b, c, f, g, d]
-// Q[a , b, c, f, g, d]
 
 module.exports = {
   Graph
